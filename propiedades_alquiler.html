@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades en Alquiler</title>
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script src="assets/js/scripts.js" defer></script>
+</head>
+<body>
+    <header class="p-3 bg-dark text-white">
+        <nav class="container d-flex justify-content-between">
+            <a href="index.html" class="text-white text-decoration-none">Inicio</a>
+            <div>
+                <a href="propiedades_venta.html" class="text-white text-decoration-none me-3">Propiedades en Venta</a>
+                <a href="propiedades_alquiler.html" class="text-white text-decoration-none">Propiedades en Alquiler</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-5">
+        <h1 class="text-center">Propiedades en Alquiler</h1>
+        <div id="propiedades-alquiler" class="row mt-4">
+            <!-- Properties will be dynamically rendered here -->
+        </div>
+    </main>
+    <script>
+        const propiedades = window.propiedadesAlquiler;
+        renderPropiedades(propiedades, "propiedades-alquiler");
+    </script>
+</body>
+</html>
