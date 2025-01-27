@@ -1,19 +1,29 @@
-.main-section {
-    background-image: url('../img/img-main.jpeg');
-    background-size: cover; /* La imagen cubrirá todo el ancho y largo */
-    background-position: center;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-}
-
-.card {
-    height: 100px;
-}
-
-.card img{
-    height: 250px;
-}
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .cardA {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    max-width: 300px;
+  }
+  
+  .cardA img {
+    width: 100%; 
+    height: auto; 
+  }
+  
+  .green {
+    color: green;
+  }
+  
+  .red {
+    color: red;
+  }
+  

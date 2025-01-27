@@ -1,92 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propiedades en Venta</title>
-    <link rel="stylesheet" href="assets/css/estilos.css">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propiedades en Venta</title>
+  <link rel="stylesheet" href="assets/css/estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
-    <header class="p-3 bg-dark text-white">
-        <nav class="container d-flex justify-content-between">
-            <a href="index.html" class="text-white text-decoration-none">Inicio</a>
-            <div>
-                <a href="propiedades_venta.html" class="text-white text-decoration-none me-3">Propiedades en Venta</a>
-                <a href="propiedades_alquiler.html" class="text-white text-decoration-none">Propiedades en Alquiler</a>
-            </div>
-        </nav>
-    </header>
-    <main class="container mt-5">
-        <h1 class="text-center">Propiedades en Venta</h1>
-        <div id="propiedades-venta" class="row mt-4">
-            <!-- Las propiedades se renderizarán dinámicamente aquí -->
-        </div>
-    </main>
-    <script>
-        const propiedadesVenta = [
-            {
-                nombre: "Casa Familiar",
-                src: "assets/img/casa1.jpg",
-                descripcion: "Una hermosa casa con jardín amplio.",
-                ubicacion: "Santiago",
-                habitaciones: 4,
-                costo: 200000000,
-                smoke: false,
-                pets: true
-            },
-            {
-                nombre: "Departamento Moderno",
-                src: "assets/img/departamento1.jpg",
-                descripcion: "Departamento con excelente ubicación y diseño moderno.",
-                ubicacion: "Providencia",
-                habitaciones: 2,
-                costo: 120000000,
-                smoke: true,
-                pets: false
-            },
-            {
-                nombre: "Cabaña Acogedora",
-                src: "assets/img/cabana1.jpg",
-                descripcion: "Cabaña rústica perfecta para vacaciones.",
-                ubicacion: "Valdivia",
-                habitaciones: 3,
-                costo: 90000000,
-                smoke: false,
-                pets: true
-            }
-        ];
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="propiedades_venta.html">Propiedades en Venta</a></li>
+      <li><a href="propiedades_alquiler.html">Propiedades en Alquiler</a></li>
+    </ul>
+  </nav>
 
-        function renderPropiedades(arreglo, contenedorId) {
-            const contenedor = document.getElementById(contenedorId);
-            arreglo.forEach(propiedad => {
-                const template = `
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <img src="${propiedad.src}" class="card-img-top" alt="${propiedad.nombre}">
-                            <div class="card-body">
-                                <h5 class="card-title">${propiedad.nombre}</h5>
-                                <p class="card-text">${propiedad.descripcion}</p>
-                                <p><strong>Ubicación:</strong> ${propiedad.ubicacion}</p>
-                                <p><strong>Habitaciones:</strong> ${propiedad.habitaciones}</p>
-                                <p><strong>Precio:</strong> $${propiedad.costo.toLocaleString()}</p>
-                                <p>${propiedad.smoke ? "<span class='text-success'>Se permite fumar</span>" : "<span class='text-danger'>No se permite fumar</span>"}</p>
-                                <p>${propiedad.pets ? "<span class='text-success'>Se permiten mascotas</span>" : "<span class='text-danger'>No se permiten mascotas</span>"}</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                contenedor.innerHTML += template;
-            });
-        }
+  <h1>Propiedades en Venta</h1>
+  <div id="ventasTotales" class="contenedor-propiedades"></div>
 
-        renderPropiedades(propiedadesVenta.slice(0, 3), "propiedades-venta");
-    </script>
   <script src="assets/js/scripts.js"></script>
+
 </body>
 </html>
