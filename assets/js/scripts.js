@@ -1,7 +1,7 @@
 
 function renderPropiedades(arreglo, contenedorId) {
     const contenedor = document.getElementById(contenedorId);
-    contenedor.innerHTML = ""; // Clear existing content
+    contenedor.innerHTML = ""; 
     arreglo.forEach(propiedad => {
         const template = `
             <div class="col-md-4">
@@ -21,6 +21,7 @@ function renderPropiedades(arreglo, contenedorId) {
         `;
         contenedor.innerHTML += template;
     });
+    
 }
 
 const propiedadesVenta = [
@@ -89,7 +90,7 @@ const propiedadesAlquiler = [
     }
 ];
 
-// Exporting functions and arrays to the global scope
+
 window.renderPropiedades = renderPropiedades;
 window.propiedadesVenta = propiedadesVenta;
 window.propiedadesAlquiler = propiedadesAlquiler;

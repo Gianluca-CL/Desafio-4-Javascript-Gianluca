@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,6 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
-    <script src="assets/js/scripts.js" defer></script>
 </head>
 <body>
     <header class="p-3 bg-dark text-white">
@@ -27,12 +25,68 @@
     <main class="container mt-5">
         <h1 class="text-center">Propiedades en Alquiler</h1>
         <div id="propiedades-alquiler" class="row mt-4">
-            <!-- Properties will be dynamically rendered here -->
+            <!-- Las propiedades se renderizarán dinámicamente aquí -->
         </div>
     </main>
     <script>
-        const propiedades = window.propiedadesAlquiler;
-        renderPropiedades(propiedades, "propiedades-alquiler");
+        const propiedadesAlquiler = [
+            {
+                nombre: "Departamento Céntrico",
+                src: "assets/img/departamento2.jpg",
+                descripcion: "Cerca de todo, ideal para profesionales.",
+                ubicacion: "Santiago Centro",
+                habitaciones: 2,
+                costo: 450000,
+                smoke: true,
+                pets: false
+            },
+            {
+                nombre: "Casa para Familia",
+                src: "assets/img/casa3.jpg",
+                descripcion: "Amplia casa en un sector tranquilo.",
+                ubicacion: "La Florida",
+                habitaciones: 3,
+                costo: 800000,
+                smoke: false,
+                pets: true
+            },
+            {
+                nombre: "Loft Moderno",
+                src: "assets/img/loft1.jpg",
+                descripcion: "Diseño minimalista con excelente iluminación.",
+                ubicacion: "Providencia",
+                habitaciones: 1,
+                costo: 600000,
+                smoke: false,
+                pets: false
+            }
+        ];
+
+        function renderPropiedades(arreglo, contenedorId) {
+            const contenedor = document.getElementById(contenedorId);
+            arreglo.forEach(propiedad => {
+                const template = `
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="${propiedad.src}" class="card-img-top" alt="${propiedad.nombre}">
+                            <div class="card-body">
+                                <h5 class="card-title">${propiedad.nombre}</h5>
+                                <p class="card-text">${propiedad.descripcion}</p>
+                                <p><strong>Ubicación:</strong> ${propiedad.ubicacion}</p>
+                                <p><strong>Habitaciones:</strong> ${propiedad.habitaciones}</p>
+                                <p><strong>Precio:</strong> $${propiedad.costo.toLocaleString()}</p>
+                                <p>${propiedad.smoke ? "<span class='text-success'>Se permite fumar</span>" : "<span class='text-danger'>No se permite fumar</span>"}</p>
+                                <p>${propiedad.pets ? "<span class='text-success'>Se permiten mascotas</span>" : "<span class='text-danger'>No se permiten mascotas</span>"}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                contenedor.innerHTML += template;
+            });
+        }
+
+        renderPropiedades(propiedadesAlquiler, "propiedades-alquiler");
     </script>
+  <script src="assets/js/scripts.js"></script>
 </body>
 </html>
